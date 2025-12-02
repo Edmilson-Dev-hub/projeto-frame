@@ -1,0 +1,116 @@
+
+/* --- Variáveis Azul Neon --- */
+:root {
+  --neon-blue: #00f3ff;
+  --neon-glow: rgba(0, 243, 255, 0.4);
+  --bg-dark: #02040a;
+  --bg-form: rgba(13, 27, 42, 0.9);
+  --text-white: #ffffff;
+}
+
+/* --- Wrapper Principal (O "Fundo" da página) --- */
+.page-wrapper {
+  background-color: var(--bg-dark);
+  /* Gradiente escuro azulado */
+  background-image: radial-gradient(circle at 80% 20%, #0d1b2a 0%, #000000 80%);
+  color: var(--text-white);
+  min-height: 100vh; /* Garante que ocupe a tela toda */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- Títulos e Textos --- */
+h1 {
+  font-size: 3rem;
+  color: var(--neon-blue);
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px var(--neon-glow);
+  font-family: sans-serif;
+}
+
+.descricao {
+  color: #a0a0a0;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  font-family: sans-serif;
+}
+
+/* --- Caixa do Formulário --- */
+.form-container {
+  background-color: var(--bg-form);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 243, 255, 0.2); /* Borda fina azul */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Sombra preta */
+  max-width: 500px;
+  width: 100%;
+}
+
+/* --- Inputs (Caixas de texto) --- */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--neon-blue);
+  font-family: sans-serif;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* Efeito ao clicar no input */
+input:focus, textarea:focus {
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 10px var(--neon-glow);
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* --- Botão Neon --- */
+.btn-neon {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #00f3ff 0%, #008c94 100%);
+  color: black;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 20px var(--neon-glow);
+  transition: transform 0.2s;
+  margin-top: 10px;
+}
+
+.btn-neon:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 40px var(--neon-glow);
+}
+
+/* --- Círculos de Fundo (Decoração) --- */
+.circle {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.circle-1 { width: 500px; height: 500px; top: -100px; right: -100px; }
+.circle-2 { width: 300px; height: 300px; bottom: -50px; left: -50px; border-color: rgba(0,243,255,0.1); }

@@ -1,200 +1,139 @@
-/* ================================================
-Variáveis e Base
-================================================
-*/
 :root {
-    --color-dark-background: #000000;
-    --color-card-background: #08081a; /* Fundo do card um pouco azulado */
-    --color-primary-text: #F3F3F3;
-    --color-highlight: #00BFFF; /* Azul Neon */
-    --color-description-text: #AAAAAA;
-    --color-price-text: #FFFFFF;
-    --gradient-start: #00FFFF; /* Ciano Neon Claro */
-    --gradient-end: #0088ff; /* Azul Mais Escuro */
+  --neon-blue: #00f3ff;
+  --neon-glow: rgba(0, 243, 255, 0.4);
+  --bg-dark: #02040a;
+  --bg-card: rgba(13, 27, 42, 0.9);
+  --text-white: #ffffff;
+  --text-gray: #a0a0a0;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--color-dark-background);
-    color: var(--color-primary-text);
-    min-height: 100vh;
-    padding-top: 5rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/*
-================================================
-Navbar
-================================================
-*/
-.navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--color-dark-background);
-    padding: 1rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #1a1a1a;
+.page-wrapper {
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(circle at 50% -20%, #0d1b2a 0%, #000000 80%);
+  color: var(--text-white);
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
 }
 
-.navbar p {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-primary-text);
+.background-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.nav-links {
-    display: none;
+.circle {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
 }
 
+.circle-1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  right: -100px;
+  border-color: rgba(0, 243, 255, 0.1);
+}
 
-/*
-================================================
-Título Principal e Subtítulo
-================================================
-*/
+.produtos-container {
+  max-width: 1200px;
+  width: 100%;
+  z-index: 1;
+  text-align: center;
+}
+
 h1 {
-    text-align: left;
-    font-size: 3rem;
-    font-weight: 800;
-    padding-left: 4rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-highlight);
-    text-shadow: 0 0 10px rgba(0, 191, 255, 0.7); /* Efeito neon no título */
+  font-size: 3rem;
+  color: var(--neon-blue);
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px var(--neon-glow);
 }
 
-/* Classe adicional para o subtítulo (descrição abaixo do H1) */
-.subtitle {
-    text-align: left;
-    font-size: 1.125rem;
-    font-weight: 400;
-    padding-left: 4rem;
-    margin-bottom: 3rem;
-    color: var(--color-description-text);
+.subtitulo {
+  color: var(--text-gray);
+  margin-bottom: 50px;
+  font-size: 1.1rem;
 }
 
-/*
-================================================
-Layout de Produtos (Grid)
-================================================
-*/
-.produtos {
-    display: grid;
-    gap: 2rem;
-    padding: 1rem 4rem;
-    max-width: 1280px;
-    margin: 0 auto;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
-/*
-================================================
-Card de Produto (<card>)
-================================================
-*/
-card {
-    display: flex;
-    flex-direction: column;
-    padding: 2.5rem;
-    background-color: var(--color-card-background);
-    border-radius: 12px;
-    border: 1px solid #333333; 
-    box-shadow: 0 0 15px rgba(0, 191, 255, 0.2); /* Sombra azul sutil */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  width: 320px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 191, 255, 0.5); /* Brilho mais forte no hover */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.15);
+  border-color: var(--neon-blue);
 }
 
-card h2 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--color-highlight); /* Título do card em azul neon */
+.card h3 {
+  font-size: 1.5rem;
+  color: var(--neon-blue);
+  margin-bottom: 15px;
 }
 
-card img {
-    display: none;
+.card p {
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
 }
 
-card p {
-    margin-bottom: 0.5rem;
-    color: var(--color-description-text);
-    font-size: 1rem;
-    line-height: 1.5;
-    text-align: left; /* Garante que o texto dentro do card esteja alinhado à esquerda */
-}
-
-/* Separador horizontal sutil antes do preço */
-card::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: #333333;
-    margin: 1.5rem 0;
-}
-
-/* Estilo para o preço (destacado e na parte inferior) */
 .price {
-    font-size: 2.25rem;
-    font-weight: 600;
-    color: var(--color-highlight);
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
-    text-align: left; /* Garante que o preço esteja alinhado à esquerda */
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-white);
+  margin-bottom: 20px;
+  display: block;
 }
 
-/*
-================================================
-Botão de Compra
-================================================
-*/
-button {
-    background-image: linear-gradient(to top, var(--gradient-end), var(--gradient-start));
-    color: var(--color-dark-background);
-    font-weight: 800;
-    padding: 1rem 2rem;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: opacity 0.3s, transform 0.1s, box-shadow 0.3s;
-    width: 100%;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 10px rgba(0, 191, 255, 0.4); /* Sombra do botão azul */
+.btn-card {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #00f3ff 0%, #008c94 100%);
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--neon-glow);
+  transition: transform 0.2s;
 }
 
-button:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 15px rgba(0, 191, 255, 0.6);
-}
-
-button:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 10px rgba(0, 191, 255, 0.4);
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-    h1, .subtitle {
-        padding-left: 1rem;
-        text-align: center; /* Mantém centralizado em mobile para melhor leitura */
-    }
-    h1 {
-        font-size: 2.5rem;
-    }
-    .produtos {
-        padding: 1rem;
-    }
-    
-    /* Alinhamento forçado à esquerda nos cards em mobile */
-    card p, .price {
-        text-align: left !important;
-        align-self: flex-start;
-    }
+.btn-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px var(--neon-glow);
 }

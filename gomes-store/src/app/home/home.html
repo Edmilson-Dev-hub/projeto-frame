@@ -1,22 +1,26 @@
-<link rel="stylesheet" href="home.css">
-<body>
-    <div class="circle-bg-1"></div>
-    
+<div class="background-shapes">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+</div>
+
+<header>
     <nav>
-        <a href="home.html">Home</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="login.html" class="login-btn">Login</a>
-        <a href="cadastro.html" class="cadastro-btn">cadastro</a>
-
+        <a routerLink="/home">Home</a>
+        <a routerLink="/produtos">Produtos</a>
+        <a routerLink="/contatos">Contatos</a>
+        <a routerLink="/login">Login</a>
     </nav>
+</header>
 
-    <section class="hero-section">
-        <h1>Bem-vindo à Gomes Store</h1>
-        
-        <p>Sua plataforma de acesso a conteúdos exclusivos e produtos digitais de alta qualidade. Estamos focados em levar o seu conhecimento e seus resultados para o próximo nível.</p>
-        
-        <p>Explore nossos produtos e descubra o que preparamos para você.</p>
-        
-        <div class="circle-bg-2"></div> <a href="#" class="btn-cta">Ver Produtos</a>
-    </section>
-</body>
+<div class="hero-container">
+    <h1>Bem-vindo à Gomes Store</h1>
+    
+    <p class="descricao">
+        Sua plataforma de acesso a conteúdos exclusivos e produtos digitais de alta qualidade.
+        Estamos focados em levar o seu conhecimento e seus resultados para o próximo nível.
+        <br><br>
+        Explore nossos produtos e descubra o que preparamos para você.
+    </p>
+
+    <button class="btn-neon" routerLink="/produtos">Ver Produtos</button>
+</div>
